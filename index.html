@@ -25,6 +25,11 @@
     <link href="css/creative.min.css" rel="stylesheet">
 
     <!-- Temporary navbar container fix -->
+    
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>  !! be careful this is the original src verion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <!--this is the new version found to make chart-js run-->
+
     <style>
     .navbar-toggler {
         z-index: 1;
@@ -367,6 +372,37 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="container">
+
+        <h2 class="section-heading text-black text-center">What if we could visualize things with chartjs ? </h2>
+        <canvas id="buyers" width="1000" height="600"></canvas>
+        <!-- pie chart canvas element -->
+        <script>
+            // line chart data
+            var buyerData = {
+                labels : ["January","February","March","April","May","June","ss"],
+                datasets : [
+                {
+                    fillColor : "rgba(172,194,132,0.4)",
+                    strokeColor : "#ACC26D",
+                    pointColor : "#fff",
+                    pointStrokeColor : "#9DB86D",
+                    data : [203,156,99,251,305,247,400]
+                }
+            ]
+            }
+            // get line chart canvas
+            var buyers = document.getElementById('buyers').getContext('2d');
+            // draw line chart
+            new Chart(buyers).Line(buyerData);
+            // pie chart data
+        </script>
+
+    </div>
+      
+    </section>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
